@@ -1,6 +1,8 @@
 <tr class="table-head">
     <th>
-        <p class="table-head__selected-counter">0</p>
+        <p class="table-head__selected-counter">
+            {{ selectedCheckboxCounter }}
+        </p>
     </th>
     <th *ngFor="let header of THEAD_ITEMS">{{ header }}</th>
     <th class="table-head__icon-box">

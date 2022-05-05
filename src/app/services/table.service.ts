@@ -13,11 +13,15 @@ export class TableService {
     persons: Person[] = PERSONS;
     personsSubject = new Subject<Person[]>();
 
-    constructor() {}
+    selectedCheckboxCounter: number = 0;
 
     private searchFilterSubject = new Subject<any>();
+    private checkboxSubject = new Subject<any>();
 
     searchFilterObservable$ = this.searchFilterSubject.asObservable();
+    checkboxObservable$ = this.checkboxSubject.asObservable();
+
+    constructor() {}
 
     getPersons(): Observable<Person[]> {
         return this.personsSubject.asObservable();
@@ -46,6 +50,32 @@ export class TableService {
                 ? { ...person, isDropdownOpened: !person.isDropdownOpened }
                 : { ...person, isDropdownOpened: false },
         );
+    }
+
+    switchIsCheckboxChecked(id: number, isChecked: boolean) {
+        this.persons = this.persons.map((person) =>
+            person.id === id
+                ? { ...person, isChecked: !person.isChecked }
+                : person,
+        );
+
+        if (!isChecked) {
+            this.decrementCheckboxCounter();
+        } else {
+            this.incrementCheckboxCounter();
+        }
+    }
+
+    incrementCheckboxCounter() {
+        this.selectedCheckboxCounter += 1;
+    }
+
+    decrementCheckboxCounter() {
+        this.selectedCheckboxCounter -= 1;
+    }
+
+    handleCheckboxChange() {
+        this.checkboxSubject.next(this.selectedCheckboxCounter);
     }
 
     handleSearchFilter(searchTerm: string) {

@@ -52,4 +52,18 @@ export class TbodyComponent implements OnInit {
 
         this.tableService.personsSubject.next(this.tableService.persons);
     }
+
+    onCheckboxChange(id: number, e: Event): void {
+        const isChecked = (<HTMLInputElement>e.target).checked;
+
+        this.tableService.switchIsCheckboxChecked(id, isChecked);
+
+        this.tableService.handleCheckboxChange();
+
+        this.tableService
+            .getPersons()
+            .subscribe((value) => (this.persons = value));
+
+        this.tableService.personsSubject.next(this.tableService.persons);
+    }
 }

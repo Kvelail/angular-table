@@ -12,6 +12,7 @@
                 name="is-checked"
                 id="is-checked"
                 [checked]="person.isChecked"
+                (change)="onCheckboxChange(person.id, $event)"
             />
         </div>
     </td>
