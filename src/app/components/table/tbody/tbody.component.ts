@@ -37,6 +37,10 @@ export class TbodyComponent implements OnInit {
             .subscribe((value) => (this.persons = value));
 
         this.tableService.personsSubject.next(this.tableService.persons);
+
+        this.tableService.searchFilterObservable$.subscribe((value) => {
+            this.persons = value;
+        });
     }
 
     onDropdownClick(id: number): void {
