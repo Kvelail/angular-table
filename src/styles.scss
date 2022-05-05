@@ -45,3 +45,19 @@ th, td {
 th {
     font-size: 0.9rem;
 }
+
+td { 
+    border: solid .2rem var(--color-background);
+    border-style: solid none;
+    padding: .2rem;
+}
+
+tr td:first-child { 
+    border-top-left-radius: .3rem;
+    border-bottom-left-radius: .3rem;
+}
+
+tr td:last-child { 
+    border-top-right-radius: .3rem;
+    border-bottom-right-radius:.3rem;
+}

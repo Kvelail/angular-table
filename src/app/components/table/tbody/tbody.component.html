@@ -1,0 +1,110 @@
+<tr
+    *ngFor="let person of persons"
+    [ngStyle]="{
+        'background-color': person.isChecked ? '#E5E5E5' : '#fff',
+        color: person.isChecked ? '#6c6c6c' : '#aaa'
+    }"
+>
+    <td>
+        <div class="table-row__input-box">
+            <input
+                type="checkbox"
+                name="is-checked"
+                id="is-checked"
+                [checked]="person.isChecked"
+            />
+        </div>
+    </td>
+    <td>
+        <div class="table-row__image-name-box">
+            <div class="table-row__image-box">
+                <img
+                    class="table-row__image"
+                    src="{{ person.img }}"
+                    alt="{{ person.name }}"
+                />
+                <div class="table-row__image-circle"></div>
+            </div>
+            <h5>{{ person.name }}</h5>
+        </div>
+    </td>
+    <td>
+        <p>{{ person.phone }}</p>
+    </td>
+    <td>
+        <p>{{ person.ssn }}</p>
+    </td>
+    <td>
+        <p>{{ person.dob }}</p>
+    </td>
+    <td>
+        <p>{{ person.hired }}</p>
+    </td>
+    <td>
+        <p>{{ person.cdl }}</p>
+    </td>
+    <td class="table-row__icon-box">
+        <fa-icon
+            [icon]="faCloud"
+            size="sm"
+            [ngStyle]="{
+                color: person.isChecked ? '#aaa' : '#DBDEE0'
+            }"
+        ></fa-icon>
+    </td>
+    <td>
+        <div class="table-row__exp-box">
+            <div class="table-row__exp-outside">
+                <div class="table-row__exp-inside cdl"></div>
+            </div>
+            <p>in {{ person.cdl_exp }} days</p>
+        </div>
+    </td>
+    <td>
+        <div class="table-row__exp-box">
+            <div class="table-row__exp-outside">
+                <div class="table-row__exp-inside med"></div>
+            </div>
+            <p>in {{ person.med_exp }} days</p>
+        </div>
+    </td>
+    <td>
+        <div class="table-row__exp-box">
+            <div class="table-row__exp-outside">
+                <div class="table-row__exp-inside mvr"></div>
+            </div>
+            <p>in {{ person.mvr_exp }} days</p>
+        </div>
+    </td>
+    <td class="table-row__icon-box">
+        <fa-icon
+            [icon]="faPaperclip"
+            size="sm"
+            [ngStyle]="{
+                color: person.isChecked ? '#aaa' : '#DBDEE0'
+            }"
+        ></fa-icon>
+    </td>
+    <td class="table-row__icon-box">
+        <fa-icon
+            [icon]="faFileLines"
+            size="sm"
+            [ngStyle]="{
+                color: person.isChecked ? '#aaa' : '#DBDEE0'
+            }"
+        ></fa-icon>
+    </td>
+
+    <td class="table-row__icon-box">
+        <div class="table-row__menu-dropdown">
+            <fa-icon
+                class="table-row__menu-icon"
+                [ngStyle]="{
+                    color: person.isChecked ? '#aaa' : '#DBDEE0'
+                }"
+                [icon]="faEllipsis"
+                size="lg"
+            ></fa-icon>
+        </div>
+    </td>
+</tr>
