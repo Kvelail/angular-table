@@ -104,7 +104,35 @@
                 }"
                 [icon]="faEllipsis"
                 size="lg"
+                (click)="onDropdownClick(person.id)"
             ></fa-icon>
+            <ul
+                class="table-row__dropdown"
+                [ngStyle]="{
+                    display: person.isDropdownOpened ? 'block' : 'none'
+                }"
+            >
+                <li *ngFor="let item of DROPDOWN_MENU_ITEMS">
+                    <div *ngIf="item.text !== 'Delete'">
+                        <fa-icon
+                            class="table-row__menu-icon"
+                            [icon]="item.icon"
+                        ></fa-icon>
+                        {{ item.text }}
+                    </div>
+
+                    <div
+                        class="table-row__menu-box-delete"
+                        *ngIf="item.text === 'Delete'"
+                    >
+                        <fa-icon
+                            class="table-row__menu-icon"
+                            [icon]="item.icon"
+                        ></fa-icon>
+                        {{ item.text }}
+                    </div>
+                </li>
+            </ul>
         </div>
     </td>
 </tr>

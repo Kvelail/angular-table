@@ -1,3 +1,5 @@
+import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
 export interface Person {
     id: number;
     name: string;
@@ -12,4 +14,9 @@ export interface Person {
     mvr_exp: number;
     isChecked: boolean;
     isDropdownOpened: boolean;
+}
+
+export interface DropdownMenuItems {
+    icon: IconDefinition;
+    text: string;
 }
