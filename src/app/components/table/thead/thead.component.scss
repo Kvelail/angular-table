@@ -1,0 +1,16 @@
+.table-head {
+    color: var(--color-grey);
+
+    &__selected-counter {
+        background-color: var(--color-light-blue);
+        color: var(--color-white);
+        border-radius: .2rem;
+        text-align: center;
+        padding: .2rem;
+        margin-right: .2rem;
+    }
+
+    &__icon-box {
+        text-align: center;
+    }
+}

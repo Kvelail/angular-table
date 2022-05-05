@@ -4,11 +4,17 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TableComponent } from './components/table/table.component';
+import { TheadComponent } from './components/table/thead/thead.component';
+import { TbodyComponent } from './components/table/tbody/tbody.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    TableComponent,
+    TheadComponent,
+    TbodyComponent
   ],
   imports: [
     BrowserModule,
