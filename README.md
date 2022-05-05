@@ -1,4 +1,4 @@
-# AngularTable
+# Angular Table
 
 Project made as part of job interview.
 
