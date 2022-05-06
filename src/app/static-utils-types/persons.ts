@@ -1,5 +1,7 @@
 import { Person } from './types';
 
+import { getRandomInt } from './utils';
+
 export const PERSONS: Person[] = [
     {
         id: 1,
@@ -92,3 +94,17 @@ export const PERSONS: Person[] = [
         isDropdownOpened: false,
     },
 ];
+
+const PERSONS_COUNT = 1000;
+
+export const getPersonsData = () => {
+    let i = 0;
+    const duplicatedPersonsArr = [];
+
+    while (i < PERSONS_COUNT) {
+        duplicatedPersonsArr.push(PERSONS[getRandomInt(PERSONS.length)]);
+        i++;
+    }
+
+    return duplicatedPersonsArr;
+};

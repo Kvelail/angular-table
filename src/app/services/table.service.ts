@@ -4,13 +4,13 @@ import { Observable, Subject } from 'rxjs';
 
 import { Person } from 'src/app/static-utils-types/types';
 
-import { PERSONS } from '../static-utils-types/persons';
+import { getPersonsData } from '../static-utils-types/persons';
 
 @Injectable({
     providedIn: 'root',
 })
 export class TableService {
-    persons: Person[] = PERSONS;
+    persons: Person[] = getPersonsData();
     personsSubject: Subject<Person[]> = new Subject<Person[]>();
 
     selectedCheckboxCounter: number = 0;
