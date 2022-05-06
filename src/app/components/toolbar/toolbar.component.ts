@@ -19,7 +19,7 @@ export class ToolbarComponent implements OnInit {
     ngOnInit(): void {}
 
     onInputChange(e: Event): void {
-        const searchTerm = (<HTMLInputElement>e.target).value.trim();
+        const searchTerm: string = (<HTMLInputElement>e.target).value.trim();
 
         this.tableService.handleSearchFilter(searchTerm);
     }
